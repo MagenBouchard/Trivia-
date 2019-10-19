@@ -1,90 +1,207 @@
+$(document).ready(function () {
+
+let questionBank = [
+
+    {
+    prompt: "Poodles belong to which American Kennel Club(AKC) group?",
+    choices: ["Non-sporting", "Sporting", "Herding", "Hound"],
+    answer: 0,
+    photo: "images/poodle.jpg" 
+    
+},
+{
+    prompt: "How many breeds of dogs are recognized by the American Kennel Club(AKC)?",
+    choices: [ "100", "303", "202", "404"],
+    answer: 2,
+    photo:"images/AKCyears.png" 
+
+},
+
+{
+    prompt: "How many years has the Labrador Retriever been pn the AKC's top 10 most popular breed list?",
+    choices: [ "2 Consecutive years", "5 Consecutive years", "10 Consecutive years", "25 Consecutive years"],
+    answer: 3,
+    photo:"images/lab.jpg" 
+
+},
+
+{
+    prompt: "What country did the Australian Shepherd orginate from?",
+    choices: [ "Australia", "The United States of America", "Africa", "Newfoundland"],
+    answer: 1,
+    photo:"images/asd.jpg" 
+
+},
+
+{
+    prompt: "What country is the Labrodor Retriever orginally from?",
+    choices: [ "Australia", "The United States of America", "Africa", "Newfoundland"],
+    answer: 3,
+    photo:"images/lab.jpg" 
+
+},
 
 
-let startButton = document.getElementById('startbutton')
-let questionWrapper = document.getElementById('question-wrapper')
-let nextButton= document.getElementById('nextquestion')
 
 
-let shuffleQuestion, currentQuestionIndex
+];
 
 
+let correctAnswers = 0;
+let wrongAnswers= 0;
+let timer = 20;
+let intervalId;
+let userGuess;
+let timing = false;
+let total = questionBank.length;
+let turn;
+let index;
+let newArray = [];
+let holder = [];
 
 
+$("#nextQuestion").hide();
+$("#newGame").hide();
 
 
-let questionElement= document.getElementById('questions')
-let answerButtons= document.getElementById("answer-buttons")
+$("#start").on("click", function ()
+{
+    $("#start").hide();
+    displayQuestion();
+    runTime();
+    for (let i=0; i<questionBank.length; i++)
+    {
+        holder.push(questionBank[i]);
+    }
+})
 
-startButton.addEventListener( 'click', startGame);
+function runTime()
+{
+    if (!timing)
+    {
+        intervalId = setInterval(decrement, 1000);
+        timing = true;
+    }
+}
 
-
-    function startGame() {
-        // console.log("start game");
-        shuffleQuestion = questions.sort(() => Math.random() - .5 )
-        currentQuestionIndex = 0
-        setNextQuestion()           
-
+function decrement()
+{
+    $("#timer").html("<h3>" + "Time remaining: <br> " + timer + "</h3>");
+    timer --;
+    if (timer===0)
+    {
+        wrongAnswers ++;
+        stop();
+        $("#answer").html("<p>" + "Rut Roh! You ran out of time " + turn.choices[turn.answer] + "is the correct answer" + "</p>");
+        hidePic();
     }
 
-    function setNextQuestion () {
-        resetState()
-            nextButton.classList.add('hide')
-            while (answerButtons.firstChild){
-                answerButtons.removeChild()
-                (answerButtons.firstChild)
+}
+
+function stop()
+{
+    timing = false;
+    clearInterval(intervalId);
+}
+
+function displayQuestion()
+{
+    index = Math.floor(Math.random()*questionBank.length);
+    turn = questionBank[index];
+
+    $("#question-holder").html("<h2> " + turn.prompt + "</h2>");
+    for (let i=0; i<turn.choices.length; i++)
+    {
+        let userChoice = $("<div>");
+        userChoice.addClass("answerChoice");
+        userChoice.html( "<hr>" + turn.choices[i]);
+        userChoice.attr("data-guess-value", i)
+        $("#answer").append(userChoice);
+    }
+
+
+
+
+$(".answerChoice").on("click", function(){
+    userGuess = parseInt($(this).attr("data-guess-value"));
+    if (userGuess === turn.answer)
+    {
+        stop();
+        correctAnswers++;
+        userGuess= " ";
+        $("#answer").html("<p>" +" Correct!" + "</p>");
+        hidePic();
+    }
+    else
+    {
+        stop();
+        wrongAnswers++;
+        userGuess="";
+        $("#answer").html("<p>" + "Wrong! The correct answer is:  " + turn.choices[turn.answer] + "</p>");
+        hidePic();
+    }
+})
+}
+
+function hidePic (){
+    $("#answer").append("<img src= " + turn.photo + ">");
+   newArray.push(turn)
+   questionBank.splice(index, 1);
+
+      setTimeout(function()
+   {
+        $("#answer").empty();
+        timer = 20;
+
+        if ((wrongAnswers + correctAnswers) === total)
+        {
+            $("#question-holder").empty();
+            $("#question-holder").html("<h3>" +" Thank you for playing!" + "<br>" + "Game Over" + "</h3>");
+            $("#answer").append("<h4>" + "Number of Correct: " + correctAnswers + "</h4>");
+            $("#answer").append("<h4>" + "Number of Wrong: " + wrongAnswers + "</h4>");
+            $("#nextQuestion").show();
+            correctAnswers = 0;
+            wrongAnswers = 0;
+            percentage()
+
+
+            function percentage(correctAnswers, wrongAnswers){
+                let percentage =(Math.floor((correctAnswers/ wrongAnswers) * 100))
+                console.log(percentage)
+
             }
+              
+
+
+
+
+    
+                
+
+            
+
+
         }
+        else
+        {
+            runTime();
+            displayQuestion();
+        }
+   }, 5000);
+}
+$("#nextQuestion").on("click", function()
+{
+    $("#nextQuestion").hide();
+    $("#answer").empty();
+    $("#question-holder").empty();
+	for(var i = 0; i < holder.length; i++) {
+		questionBank.push(holder[i]);
+	}
+	runTime();
+	displayQuestion();
+})
 
 
-
-    function showQuestion(shuffleQuestion[currentQuestionIndex]) {
-
-    }
-    
-
-    function showQuestion(questions) {
-        questionElement.innerText = questions.questions
-        questions.answer.forEach(answer =>{
-            const button = document.createElement('button')
-            button.innerText =answer.innerTex
-            button.classList.add('button')
-            if (answer.correct) {
-                button.dataset.correct = answer.correct
-            }
-            button.addEventListener('click', selectAnswer)
-            answerButtons.appendChild(button);
-        })
-        
-
-    }
+});
 
 
-    function resetState() {
-        nextButton.classList.add('hide')
-        while (answerButtons.firstChild){
-            answerButtons.removeChild()
-            (answerButtons.firstChild)
-    }
-
-    function selectAnaswer(e) {
-
-    }
-    
-
-
-    
-   
-    }
-
-    // var score = 0;
-
-    // for (var i = 0; i, questions.length; i++) {
-    //     var response = $("#response").text(questions[i].prompt);
-    //     if (reponse === questions[i].answer) {
-    //         score++;
-    //     } else {
-    //         alert("wrong");
-    //     }
-    // }
-
-    // $(".results").html("<h2> You got" + score + "/" + questions.length + "<h/2>");

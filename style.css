@@ -1,60 +1,39 @@
-body {
-    padding:50px;
-    margin:0;
-    justify-content: center;
-    align-items: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+ body { 
+    background: lightseagreen;
+    text-align: center;
+        }
+ #question-holder {
+    margin: 0 auto;
+    width: 400px;
+    text-align: center;
+      }
 
+#buttons {
+    margin: 50px 0;
+    text-align: center;
+      }
+
+button {
+    width: 200px;
+    height: 100px;
+      }
+
+#timer {
+    background: red;
 }
 
-.wrapper {
-    width: 800px;
-    max-width: 80%;
-    background-color: wheat;
-    border-radius: 5px;
+#question-holder {
+    border: 10px lightyellow solid;
+}
+
+.answerChoice {
     padding: 10px;
-    box-shadow: 0 0 10px 2px;
+    margin: 10px;
+    font-size: 25px;
+    
+    
 }
 
-.instructions {
-    text-align: center;
-}
-
-
-.startgame {
-    padding: 30px;
-    text-align: center;
-}
-
-.startbutton .nextquestion {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.button-grid {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.button, .startbutton, .nextquestion {
-    border: 1px solid;
-    border-radius: 5px;
-    padding: 5px 10px;
-    border-color: none;
-}
-
-.button:hover, 
-.startbutton:hover, 
-.nextquestion:hover {
-    border-color: white;
-}
-
-
-.hide {
-    display: none;
+.answerChoice:hover {
+    color: white;
 }

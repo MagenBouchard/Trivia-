@@ -1,55 +1,45 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
+
+<html lang="en-us">
+
+  <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script defer src="main.js"></script>
-    <script src="question.js"></script>
+    <title>Dog Breed Questions</title>
+    <link rel="stylesheet" href="style.css"> 
 
-    <title>Totally Trivial Trivia! </title>
-</head>
-<body>
-    <div class="wrapper">
+  </head>
 
-        <div class="instructions">
-            <h1> Totally Trivial Trivia!</h1>
+  <body>
+      <h1>Totally Trivia</h1>
+      <h2>Be sure to answer the questions before time runs out!</h2>
 
-            <p> This is the totally Trivial Triva game. Be sure to answer all the questions before time runs out! Good Luck!</p>
-        </div>
-
-        <div class="timer">
-
-        </div>
-
-
-        <div class="startgame">
-            <button id="startbutton" class="startbutton">Start</button>
-            <button id="nextquestion" class="nextquestion">Next Question</button>
-        </div>
-
-        <div id="question-wrapper">
-            <div id="questions"> question</div>
-            <div id="answer-buttons" class="button-grid">
-                <button class="button">1 </button>
-                <button class="button">2</button>
-                <button class="button">3</button>
-                
-                <button class="button">4</button>
-            </div>
-
-
-
-
-        </div>
-
-
-        </div>
+    <div id="buttons">
+      <button id="start"><h2>Start</h2></button>
+      <button id="nextQuestion"><h2>New Game</h2></button>
+      <button id="newGame"><h2>New Game</h2> </button>
     </div>
+
+    <div id ="timer"></div>
+
+
+    <div id="question-holder"> 
+        Your Questions will be displayed here! Good Luck!
+    </div>
+
+        <div id="prompt"></div>
+        <div id="answer"></div>
     
-</body>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- <script type="text/javascript" src="questions.js"></script> -->
+    <script type="text/javascript" src="main.js"></script>
+
+  </body>
+
 </html>
+

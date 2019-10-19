@@ -1,8 +1,20 @@
-var questions = [
+$(document).ready(function () {
+
+    let questionBank = [
+    
+        {
+        prompt: "Poodles belong to which American Kennel Club(AKC) group?",
+        choices: ["non-sporting", "sporting", "herding", "hound"],
+        answer: 0,
+        photo: "images/poodle.jpg" 
+        
+    },
     {
-        question:" what do you get when you add 2+2?",
-        answer:[
-            {text: '4' , correct: true},
-            {text: '222', correct: false }
-        ]
-    }]
+        prompt: "How breeds of dogs are recogonized by the American Kennel Club(AKC)?",
+        choices: [ "100", "303", "202", "404"],
+        answer: 2,
+        photo:"images/AKCyears.png" 
+    
+    }
+    ];
+    
