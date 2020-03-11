@@ -53,17 +53,7 @@ let questionBank = [
     answer: 3,
     photo:"images/lab.jpg" 
 
-},
-{
-    prompt: "What country is the Labraodor Retriever orginally from?",
-    choices: [ "Australia", "The United States of America", "Africa", "Newfoundland"],
-    answer: 3,
-    photo:"images/lab.jpg" 
-
 }
-
-
-
 
 ];
 
@@ -193,15 +183,6 @@ function hidePic (){
             }
               
 
-
-
-
-    
-                
-
-            
-
-
         }
         else
         {
@@ -221,7 +202,6 @@ $("#nextQuestion").on("click", function()
 	runTime();
 	displayQuestion();
 })
-
 
 });
 
