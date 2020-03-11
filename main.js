@@ -34,12 +34,33 @@ let questionBank = [
 },
 
 {
+    prompt: "Schipperkes orginate from what country?",
+    choices: [ "THe United States of America", "Africa", "Belgium", "Japan"],
+    answer: 2,
+    photo:"https://vetstreet-brightspot.s3.amazonaws.com/00/2ec490a80611e0a0d50050568d634f/file/Shipperke-3-645mk062811.jpg" 
+
+},
+{
     prompt: "What country is the Labrodor Retriever orginally from?",
     choices: [ "Australia", "The United States of America", "Africa", "Newfoundland"],
     answer: 3,
     photo:"images/lab.jpg" 
 
 },
+{
+    prompt: "What country is the Labrodor Retriever orginally from?",
+    choices: [ "Australia", "The United States of America", "Africa", "Newfoundland"],
+    answer: 3,
+    photo:"images/lab.jpg" 
+
+},
+{
+    prompt: "What country is the Labrodor Retriever orginally from?",
+    choices: [ "Australia", "The United States of America", "Africa", "Newfoundland"],
+    answer: 3,
+    photo:"images/lab.jpg" 
+
+}
 
 
 
