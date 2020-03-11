@@ -41,21 +41,21 @@ let questionBank = [
 
 },
 {
-    prompt: "What country is the Labrodor Retriever orginally from?",
+    prompt: "According to the AKC what is the weight range of an Airedale Terrier?",
+    choices: [ "50-70lbs", "70-80lbs", "35-55lbs", "50-55lbs"],
+    answer: 0,
+    photo:"https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/30202205/Airedale-Terrier-standing-stacked-outdoors.jpg" 
+
+},
+{
+    prompt: "What country is the Labraodor Retriever orginally from?",
     choices: [ "Australia", "The United States of America", "Africa", "Newfoundland"],
     answer: 3,
     photo:"images/lab.jpg" 
 
 },
 {
-    prompt: "What country is the Labrodor Retriever orginally from?",
-    choices: [ "Australia", "The United States of America", "Africa", "Newfoundland"],
-    answer: 3,
-    photo:"images/lab.jpg" 
-
-},
-{
-    prompt: "What country is the Labrodor Retriever orginally from?",
+    prompt: "What country is the Labraodor Retriever orginally from?",
     choices: [ "Australia", "The United States of America", "Africa", "Newfoundland"],
     answer: 3,
     photo:"images/lab.jpg" 
