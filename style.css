@@ -1,6 +1,7 @@
  body { 
     background: lightseagreen;
     text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
 .wrapper{
@@ -14,7 +15,8 @@
     margin: 0 auto;
     width: 400px;
     text-align: center;
-    background-color: steelblue;
+    background-color: wheat;
+  
 
       }
 
@@ -32,11 +34,14 @@ button {
 #timer {
     background: red;
     font-size: 30px;
+    
 }
 
 #question-holder {
-    border: 10px lightyellow solid;
-    background-color: bisque;
+   
+    width: 100%;
+    padding: 30px;
+
 }
 
 .answerChoice {
