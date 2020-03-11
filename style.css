@@ -31,6 +31,7 @@ button {
 
 #timer {
     background: red;
+    font-size: 30px;
 }
 
 #question-holder {
@@ -43,7 +44,7 @@ button {
     margin: 10px;
     font-size: 25px;
     border-style: solid;
-    border-width: 7px;
+    border-width: 5px;
     
     
 }
