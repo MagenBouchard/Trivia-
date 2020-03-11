@@ -2,6 +2,13 @@
     background: lightseagreen;
     text-align: center;
         }
+
+.wrapper{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+      
+}
  #question-holder {
     margin: 0 auto;
     width: 400px;
@@ -24,6 +31,7 @@ button {
 
 #question-holder {
     border: 10px lightyellow solid;
+    background-color: bisque;
 }
 
 .answerChoice {
