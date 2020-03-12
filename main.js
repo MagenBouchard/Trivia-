@@ -4,7 +4,7 @@ $(document).ready(function() {
       prompt: "Poodles belong to which American Kennel Club(AKC) group?",
       choices: ["Non-sporting", "Sporting", "Herding", "Hound"],
       answer: 0,
-      photo: "images/poodle.jpg"
+      photo: "images/poodle.jpg"}
     },
     {
       prompt:
@@ -93,7 +93,7 @@ $(document).ready(function() {
 
   function runTime() {
     if (!timing) {
-      intervalId = setInterval(decrement, 1000);
+      intervalId = setInterval(decrement, 500);
       timing = true;
     }
   }
@@ -168,7 +168,7 @@ $(document).ready(function() {
       if (wrongAnswers + correctAnswers === total) {
         $("#question-holder").empty();
         $("#question-holder").html(
-          "<h3>" + " Thank you for playing!" + "<br>" + "Game Over" + "</h3>"
+          "<h2>" + " Thank you for playing!" + "<br>" + "Game Over" + "</h2>"
         );
         $("#answer").append(
           "<h4>" + "Number of Correct: " + correctAnswers + "</h4>"
