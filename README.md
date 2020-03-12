@@ -1,5 +1,5 @@
 # Trivia-
-Test your dog knowledge!
+Test your dog knowledge and answer the questions before time runs out.
 
 ## About
 This triva game tests knowledge regarding various dog breeds and the American Kennel Club(AKC).
