@@ -6,5 +6,7 @@ This triva game tests knowledge regarding various dog breeds and the American Ke
 
 This game uses JQuery to dynamically add content to the page. Questions are held within an array and displayed in a random order using Math.random(). Each question is timed and will time out after 20 seconds. If the user fails to answer the question it will be recorded as incorrect.
 
+At the end of the game users will be provided a number of correct and incorrect responses. a
+
 ## Technologies used
 HTML, CSS, JavaScript, jQuery
